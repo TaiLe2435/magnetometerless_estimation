@@ -16,6 +16,12 @@ from sphero_mini.srv import StraightMotion
 from sphero_mini.srv import StraightMotionRequest
 from sphero_mini.srv import StraightMotionResponse
 
+#################################################################################
+# Description: Client that sends request to server for straight motion
+# Input: distance in cm (int), heading in deg (int)
+# Output: confirmation message (string)
+#################################################################################
+
 def straight_motion_client(dist, dir):
     rospy.wait_for_service('straight_motion')
     try:

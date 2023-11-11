@@ -38,6 +38,12 @@ def disconnect(sphero):
     sphero.sleep()
     sphero.disconnect()
 
+#################################################################################
+# Description: Callback function for circular motion server
+# Input: linear velocity in cm/s (int), radius of circle in cm (int), sampling period in s (float)
+# Output: confirmation message (string)
+#################################################################################
+
 def handle_circular_motion(req):
     # move robot with constant linear and angular velocity
     lin_vel = req.v
@@ -66,6 +72,12 @@ def handle_circular_motion(req):
     print("v = %s | r = %s | dt = %s" %(req.v, req.r, req.dt) )
     resp = "Circles" 
     return(resp)
+
+#################################################################################
+# Description: Server the receives request to server for circular motion
+# Input: None
+# Output: None
+#################################################################################
 
 def circular_motion_server():
     rospy.init_node('circular_motion_server')

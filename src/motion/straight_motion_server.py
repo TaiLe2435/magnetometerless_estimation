@@ -38,6 +38,12 @@ def disconnect(sphero):
     sphero.sleep()
     sphero.disconnect()
 
+#################################################################################
+# Description: Callback function for straight motion server
+# Input: distance in cm (int), heading in deg (int)
+# Output: confirmation message (string)
+#################################################################################
+
 def handle_straight_motion(req):
     print("Distance: %s || Direction: %s" %(req.dist, req.dir))
     resp = "Moving ..."
@@ -45,6 +51,12 @@ def handle_straight_motion(req):
     sphero.wait(1)
     sphero.roll(0, 0)
     return(resp)
+
+#################################################################################
+# Description: Server for straight motion request
+# Input: None
+# Output: None
+#################################################################################
 
 def straight_motion_server():
     rospy.init_node('straight_motion_server')

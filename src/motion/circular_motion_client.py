@@ -16,6 +16,12 @@ from sphero_mini.srv import CircularMotion
 from sphero_mini.srv import CircularMotionRequest
 from sphero_mini.srv import CircularMotionResponse
 
+#################################################################################
+# Description: Client that sends request to server for circular motion
+# Input: linear velocity in cm/s (int), radius of circle in cm (int), sampling period in s (float)
+# Output: confirmation message (string)
+#################################################################################
+
 def circular_motion_client(v, r, dt):
     rospy.wait_for_service('circular_motion')
     try:
