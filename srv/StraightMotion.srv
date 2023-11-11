@@ -1,0 +1,4 @@
+int64 dist
+int64 dir
+---
+string confirmation
